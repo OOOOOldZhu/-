@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:paddingBottom="6dp"
+    android:paddingTop="10dp">
+
+    <LinearLayout
+        android:id="@+id/first"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:gravity="center"
+        android:onClick="onTabClicked"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/firstimage"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/selector_home" />
+
+        <TextView
+            android:id="@+id/firstext"
+            android:textSize="12sp"
+            android:textColor="@drawable/selector_hometext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="首页" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/second"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:gravity="center"
+        android:onClick="onTabClicked"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/secondimage"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/selector_second" />
+
+        <TextView
+            android:id="@+id/secondtext"
+            android:textSize="12sp"
+            android:layout_marginTop="4dp"
+            android:textColor="@drawable/selector_hometext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="第二" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/third"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:gravity="center"
+        android:onClick="onTabClicked"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/thirdimage"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/selector_third" />
+
+        <TextView
+            android:id="@+id/thirdtext"
+            android:textSize="12sp"
+            android:textColor="@drawable/selector_hometext"
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="第三" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/four"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:gravity="center"
+        android:onClick="onTabClicked"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/fourimage"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/selector_four" />
+        <TextView
+            android:id="@+id/fourtext"
+            android:textColor="@drawable/selector_hometext"
+            android:textSize="12sp"
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="第四" />
+
+    </LinearLayout>
+</LinearLayout>
