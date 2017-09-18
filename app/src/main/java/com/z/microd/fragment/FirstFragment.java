@@ -2,6 +2,7 @@ package com.z.microd.fragment;
 
 import android.os.AsyncTask;
 import android.text.format.DateUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -10,8 +11,15 @@ import android.widget.ListView;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.z.microd.R;
+import com.z.microd.api.MyHttpCallBack;
+import com.z.microd.api.MyHttpManager;
 
+import java.io.IOException;
 import java.util.LinkedList;
+
+import okhttp3.Call;
+import okhttp3.Request;
+import okhttp3.Response;
 
 /**
  * Created by z on 2017/9/17.
@@ -21,7 +29,7 @@ public class FirstFragment extends BaseFragment {
     private LinkedList<String> mListItems;
     private PullToRefreshListView mPullRefreshListView;
     private ListView mListView;
-
+    String TAG ="zhu";
     @Override
     public void init() {
         mPullRefreshListView = (PullToRefreshListView) mActivity.findViewById(R.id.pull_refresh_list);
@@ -39,7 +47,32 @@ public class FirstFragment extends BaseFragment {
         mPullRefreshListView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
             @Override
             public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
+                MyHttpManager.getInstance().doGet("www.baidu.com", new MyHttpCallBack() {
+                    @Override
+                    public void onBeforeRequest(Request request) {
+                        Log.d(TAG, "onBeforeRequest: ");
+                    }
 
+                    @Override
+                    public void onFailure(Call call, IOException e) {
+                        Log.d(TAG, "onFailure: ");
+                    }
+
+                    @Override
+                    public void onResponse() {
+                        Log.d(TAG, "onResponse: ");
+                    }
+
+                    @Override
+                    public void onSuccess(Call response, Object t) {
+                        Log.d(TAG, "onSuccess: "+t);
+                    }
+
+                    @Override
+                    public void onError(Response response, String errorMsg) {
+                        Log.d(TAG, "onError: ");
+                    }
+                });
             }
 
             @Override

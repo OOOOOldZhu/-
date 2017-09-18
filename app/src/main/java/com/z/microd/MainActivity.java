@@ -13,8 +13,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.roughike.bottombar.BottomBar;
-import com.roughike.bottombar.OnTabSelectListener;
 import com.z.microd.fragment.BaseFragment;
 import com.z.microd.fragment.FirstFragment;
 import com.z.microd.fragment.FourFragment;
@@ -25,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
     FrameLayout container;
     Toolbar toolbar;
     TextView title;
-    BottomBar bottomBar;
     private LinearLayout first;
     private ImageView firstImage;
     private TextView firstText;
