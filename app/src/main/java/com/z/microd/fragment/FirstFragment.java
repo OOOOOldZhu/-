@@ -29,6 +29,12 @@ public class FirstFragment extends BaseFragment {
         mListView = mPullRefreshListView.getRefreshableView();
         // 将viewpager的布局设置给listview的头条目
         // mListView.addHeaderView();
+
+        // 停止listview的加载数据的操作
+        //mPullRefreshListView.onRefreshComplete();
+
+        // 给listView添加adapter
+        // mListView.setAdapter(listViewAdapter);
         mPullRefreshListView.setMode(PullToRefreshBase.Mode.BOTH);
         mPullRefreshListView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
             @Override
