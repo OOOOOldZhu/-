@@ -33,8 +33,9 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        initData();
         super.onActivityCreated(savedInstanceState);
+        mActivity=this.getActivity();
+        initData();
     }
 
     public abstract void initData(); // init() 方法不能写在 fragment onCreate()中，因为子类实现的时候mActivity还没初始化完毕.
