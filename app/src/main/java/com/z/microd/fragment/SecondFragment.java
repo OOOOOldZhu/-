@@ -8,7 +8,7 @@ import com.z.microd.R;
 
 public class SecondFragment extends BaseFragment {
     @Override
-    public void init() {
+    public void initData() {
 
     }
 

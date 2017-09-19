@@ -1,6 +1,7 @@
 package com.z.microd.fragment;
 
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.View;
@@ -31,7 +32,7 @@ public class FirstFragment extends BaseFragment {
     private ListView mListView;
     String TAG ="zhu";
     @Override
-    public void init() {
+    public void initData() {
         mPullRefreshListView = (PullToRefreshListView) mActivity.findViewById(R.id.pull_refresh_list);
         // 首先获取PullToRefreshListView包含的listview
         mListView = mPullRefreshListView.getRefreshableView();
@@ -47,32 +48,12 @@ public class FirstFragment extends BaseFragment {
         mPullRefreshListView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
             @Override
             public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
-                MyHttpManager.getInstance().doGet("www.baidu.com", new MyHttpCallBack() {
+                new Handler().postDelayed(new Runnable() {
                     @Override
-                    public void onBeforeRequest(Request request) {
-                        Log.d(TAG, "onBeforeRequest: ");
+                    public void run() {
+                        mPullRefreshListView.onRefreshComplete();
                     }
-
-                    @Override
-                    public void onFailure(Call call, IOException e) {
-                        Log.d(TAG, "onFailure: ");
-                    }
-
-                    @Override
-                    public void onResponse() {
-                        Log.d(TAG, "onResponse: ");
-                    }
-
-                    @Override
-                    public void onSuccess(Call response, Object t) {
-                        Log.d(TAG, "onSuccess: "+t);
-                    }
-
-                    @Override
-                    public void onError(Response response, String errorMsg) {
-                        Log.d(TAG, "onError: ");
-                    }
-                });
+                }, 2000);
             }
 
             @Override

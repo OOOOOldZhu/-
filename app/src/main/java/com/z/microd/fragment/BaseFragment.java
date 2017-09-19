@@ -15,20 +15,29 @@ import android.view.ViewGroup;
 public abstract class BaseFragment extends android.support.v4.app.Fragment {
     View rootView;
     Activity mActivity ;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        mActivity = this.getActivity();
+        super.onCreate(savedInstanceState);
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        mActivity = this.getActivity();
         if (rootView == null) {
             rootView = inflater.inflate(getLayoutID(), null);
         }
-        init();
-
         return rootView;
     }
 
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        initData();
+        super.onActivityCreated(savedInstanceState);
+    }
 
-    public abstract void init();
+    public abstract void initData(); // init() 方法不能写在 fragment onCreate()中，因为子类实现的时候mActivity还没初始化完毕.
 
     public abstract int getLayoutID();
 
