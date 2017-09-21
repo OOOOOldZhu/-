@@ -25,10 +25,11 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         mActivity=this;
+
         initBanner();
     }
     public void initBanner(){
-        bannerView = mActivity.getLayoutInflater().inflate(R.layout.header_viewpager,null);
+        bannerView = mActivity.getLayoutInflater().inflate(R.layout.header,null);
         banner=(Banner)(bannerView.findViewById(R.id.header_banner));
         //设置banner样式
         banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE);

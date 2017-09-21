@@ -1,2 +1,2 @@
-include ':app', ':mylibrary'
+include ':app', ':mylibrary', ':FlycoTabLayout_Lib'
 include ':pulltolibrary'
