@@ -45,6 +45,7 @@ public class FirstFragment extends BaseFragment {
     private View headerView;
     boolean isFirst =true;
     private String[] mTitles;
+    private String[] mTitles1;
 
     @Override
     public void initData() {
@@ -63,7 +64,9 @@ public class FirstFragment extends BaseFragment {
     public void initHeader(){
         mFragments = new ArrayList<>();
         mTitles = new String[]{"mCookie","Microduino"};
-        for (String title : mTitles) {
+        mTitles1 = new String[]{"什么是mcookie套件？","What's the Microduino Series about?"};
+
+        for (String title : mTitles1) {
             mFragments.add(SimpleCardFragment.getInstance("" + title));
         }
         headerView = mActivity.getLayoutInflater().inflate(R.layout.header,null);
